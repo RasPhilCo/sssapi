@@ -17,6 +17,7 @@ ActiveRecord::Schema.define(version: 20140822055518) do
   enable_extension "plpgsql"
 
   create_table "tags", force: true do |t|
+    t.string   "dots"
     t.string   "point1"
     t.string   "point2"
     t.string   "point3"
@@ -26,6 +27,7 @@ ActiveRecord::Schema.define(version: 20140822055518) do
     t.datetime "updated_at"
   end
 
+  add_index "tags", ["dots"], name: "index_tags_on_dots", using: :btree
   add_index "tags", ["point1"], name: "index_tags_on_point1", using: :btree
   add_index "tags", ["point2"], name: "index_tags_on_point2", using: :btree
   add_index "tags", ["point3"], name: "index_tags_on_point3", using: :btree

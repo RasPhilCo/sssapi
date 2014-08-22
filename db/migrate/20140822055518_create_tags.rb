@@ -1,6 +1,7 @@
 class CreateTags < ActiveRecord::Migration
   def change
     create_table :tags do |t|
+      t.string :dots
       t.string :point1
       t.string :point2
       t.string :point3
@@ -10,6 +11,7 @@ class CreateTags < ActiveRecord::Migration
       t.timestamps
     end
     
+    add_index :tags, :dots
     add_index :tags, :point1
     add_index :tags, :point2
     add_index :tags, :point3
