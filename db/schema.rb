@@ -11,10 +11,28 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140822055518) do
+ActiveRecord::Schema.define(version: 20140822162214) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "submitted_tags", force: true do |t|
+    t.string   "dots"
+    t.string   "point1"
+    t.string   "point2"
+    t.string   "point3"
+    t.string   "point4"
+    t.string   "point5"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "submitted_tags", ["dots"], name: "index_submitted_tags_on_dots", using: :btree
+  add_index "submitted_tags", ["point1"], name: "index_submitted_tags_on_point1", using: :btree
+  add_index "submitted_tags", ["point2"], name: "index_submitted_tags_on_point2", using: :btree
+  add_index "submitted_tags", ["point3"], name: "index_submitted_tags_on_point3", using: :btree
+  add_index "submitted_tags", ["point4"], name: "index_submitted_tags_on_point4", using: :btree
+  add_index "submitted_tags", ["point5"], name: "index_submitted_tags_on_point5", using: :btree
 
   create_table "tags", force: true do |t|
     t.string   "dots"

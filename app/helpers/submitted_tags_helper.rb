@@ -1,0 +1,2 @@
+module SubmittedTagsHelper
+end
