@@ -1,5 +1,5 @@
 Rails.application.routes.draw do
-  get '/match' => 'submitted_tags#match', as: :match
+  get '/' => 'submitted_tags#match', as: :match
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
